@@ -1,0 +1,1033 @@
+/*=====================================================
+        PREMIUM LOVE WEBSITE
+        STYLE.CSS - BAGIAN 1
+======================================================*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:#fff;
+
+    background:linear-gradient(
+    -45deg,
+    #4dacff,
+    #6fc8ff,
+    #9ccfff,
+    #ffd6e8
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 18s ease infinite;
+
+    position:relative;
+
+}
+
+/* BACKGROUND */
+
+.bg-love{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.20),transparent 35%),
+
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,.15),transparent 40%),
+
+    radial-gradient(circle at 50% 90%,rgba(255,255,255,.12),transparent 35%);
+
+}
+
+/* STARS */
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    background-image:
+
+    radial-gradient(#fff 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.30;
+
+    animation:starsMove 70s linear infinite;
+
+}
+
+/* FLOAT HEART BACKGROUND */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+}
+
+/* LOADING */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    background:#ff4d88;
+
+    z-index:99999;
+
+    transition:1s;
+
+}
+
+.heart-loader{
+
+    width:90px;
+
+    height:90px;
+
+    background:white;
+
+    position:relative;
+
+    transform:rotate(45deg);
+
+    animation:heartbeat 1s infinite;
+
+}
+
+.heart-loader::before,
+.heart-loader::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+
+    height:90px;
+
+    background:white;
+
+    border-radius:50%;
+
+}
+
+.heart-loader::before{
+
+    top:-45px;
+
+    left:0;
+
+}
+
+.heart-loader::after{
+
+    left:-45px;
+
+    top:0;
+
+}
+
+#loading h2{
+
+    font-size:32px;
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+}
+
+/* ANIMATION */
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-150px);
+
+    }
+
+}
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:rotate(45deg) scale(1);
+
+    }
+
+    50%{
+
+        transform:rotate(45deg) scale(1.15);
+
+    }
+
+    100%{
+
+        transform:rotate(45deg) scale(1);
+
+    }
+
+}
+/*==============================
+        BACKGROUND
+==============================*/
+
+.stars,
+.sparkles,
+.floating-hearts,
+.bubbles{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.stars{
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.35;
+
+    animation:moveStars 80s linear infinite;
+
+}
+
+.sparkles{
+
+    background-image:
+    radial-gradient(#fff 2px,transparent 2px);
+
+    background-size:120px 120px;
+
+    opacity:.25;
+
+    animation:twinkle 4s infinite alternate;
+
+}
+
+@keyframes moveStars{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-400px);
+
+    }
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+    }
+
+    to{
+
+        opacity:.5;
+
+    }
+
+}
+
+/*==============================
+        MAIN
+==============================*/
+
+.container{
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+}
+
+.card{
+
+    position:relative;
+
+    width:720px;
+    max-width:95%;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:var(--radius);
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+/* Efek Cahaya */
+
+.shine{
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    top:-120px;
+    left:-120px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    filter:blur(50px);
+
+}
+
+.border-light{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:var(--radius);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    pointer-events:none;
+
+}
+
+/*==============================
+        MUSIC BUTTON
+==============================*/
+
+#musicBtn{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1.3rem;
+
+    background:rgba(255,255,255,.25);
+
+    color:white;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:var(--transition);
+
+    z-index:100;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.12);
+
+    background:rgba(255,255,255,.35);
+
+}
+/*=====================================================
+        STYLE.CSS - BAGIAN 2
+        CONTENT, BUTTON, MODAL
+======================================================*/
+
+/*==============================
+        GIF
+==============================*/
+
+.gifBox{
+    width:220px;
+    margin:0 auto 25px;
+    animation:float 3s ease-in-out infinite;
+}
+
+.gifBox img{
+    width:100%;
+    display:block;
+    filter:drop-shadow(0 10px 25px rgba(255,79,145,.35));
+    transition:var(--transition);
+}
+
+.gifBox img:hover{
+    transform:scale(1.05);
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+/*==============================
+        BADGE
+==============================*/
+
+.badge{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.2);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(10px);
+
+    font-weight:600;
+
+}
+
+/*==============================
+        TITLE
+==============================*/
+
+h1{
+
+    font-family:'Pacifico',cursive;
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.7);
+
+}
+
+#typingText{
+
+    min-height:60px;
+
+    margin-bottom:25px;
+
+    font-size:1.25rem;
+
+    font-weight:500;
+
+}
+
+.divider{
+
+    margin:20px 0;
+
+    font-size:2rem;
+
+}
+
+.quote{
+
+    width:90%;
+
+    margin:0 auto 35px;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+    opacity:.95;
+
+}
+
+/*==============================
+        QUESTION
+==============================*/
+
+.question-box{
+
+    margin:30px 0;
+
+    padding:28px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+#question{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.sub-text{
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+/*==============================
+        BUTTON
+==============================*/
+
+.button-area{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:35px;
+
+    position:relative;
+
+    min-height:80px;
+
+}
+
+.btn{
+
+    min-width:180px;
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.yes{
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--pink),
+    var(--pink-light)
+    );
+
+    box-shadow:
+    0 12px 25px rgba(255,79,145,.35);
+
+}
+
+.yes:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.05);
+
+}
+
+.no{
+
+    background:white;
+
+    color:var(--pink);
+
+}
+
+.no:hover{
+
+    background:#ffeaf3;
+
+}
+
+/*==============================
+        HINT
+==============================*/
+
+.hint{
+
+    margin-top:25px;
+
+    opacity:.85;
+
+    animation:blink 2s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.4;
+
+    }
+
+}
+
+/*==============================
+        LOVE METER
+==============================*/
+
+.love-counter{
+
+    margin-top:35px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.progress{
+
+    height:18px;
+
+    margin-top:15px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.fill{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ff4fff,
+    #f384d7,
+    #ffd4e8
+    );
+
+    transition:1s;
+
+}
+
+#lovePercent{
+
+    display:block;
+
+    margin-top:10px;
+
+}
+
+/*==============================
+        RESULT
+==============================*/
+
+.result-card{
+
+    display:none;
+
+    margin-top:35px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.16);
+
+    animation:popup .5s ease;
+
+}
+
+.result-card.show{
+
+    display:block;
+
+}
+
+.result-card img{
+
+    width:180px;
+
+    margin-bottom:20px;
+
+}
+
+.result-card h2{
+
+    margin-bottom:15px;
+
+}
+
+.result-card p{
+
+    margin-bottom:25px;
+
+    line-height:1.8;
+
+}
+
+.next-btn{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:var(--pink);
+
+    color:white;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.next-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==============================
+        LETTER MODAL
+==============================*/
+
+.letter-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.letter-modal.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.letter-box{
+
+    position:relative;
+
+    width:90%;
+
+    max-width:700px;
+
+    max-height:85vh;
+
+    overflow:auto;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgb(255, 154, 205);
+
+    color:#444;
+
+    animation:popup .4s ease;
+
+}
+
+.letter-box h2{
+
+    text-align:center;
+
+    color:var(--pink);
+
+    margin-bottom:25px;
+
+}
+
+.letter-box p{
+
+    line-height:2;
+
+    margin-bottom:18px;
+
+    text-align:justify;
+
+}
+
+.letter-box h3{
+
+    text-align:center;
+
+    color:var(--pink);
+
+    margin-top:30px;
+
+}
+
+.close-btn{
+
+    position:absolute;
+
+    right:15px;
+
+    top:10px;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    color:var(--pink);
+
+}
+
+/*==============================
+        FOOTER
+==============================*/
+
+footer{
+
+    position:fixed;
+
+    bottom:15px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:.85rem;
+
+    opacity:.8;
+
+}
+
+/*==============================
+        ANIMATION
+==============================*/
+
+@keyframes popup{
+
+    from{
+
+        transform:translateY(40px) scale(.9);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0) scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/*==============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+    .card{
+
+        padding:28px;
+
+    }
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    #question{
+
+        font-size:1.5rem;
+
+    }
+
+    .button-area{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        max-width:260px;
+
+    }
+
+    .gifBox{
+
+        width:170px;
+
+    }
+
+}

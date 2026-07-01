@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>💖 Pertanyaan Buat Kamu 💖</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png">
+</head>
+
+<body>
+
+    <!-- ================= LOADING ================= -->
+
+    <div id="loading">
+        <div class="loader-heart"></div>
+        <h2>Menyiapkan kejutan buat kamu... 💕</h2>
+    </div>
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <div class="stars"></div>
+    <div class="sparkles"></div>
+    <div class="floating-hearts"></div>
+    <div class="bubbles"></div>
+
+    <!-- ================= MUSIC ================= -->
+
+    <button id="musicBtn">🎵</button>
+
+    <audio id="bgMusic" loop>
+        <source src="mp3/Nadhif Basalamah-bergema sampai selamanya.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <section class="card">
+
+            <div class="shine"></div>
+            <div class="border-light"></div>
+
+            <!-- GIF -->
+
+            <div class="gifBox">
+                <img id="mainGif" src="gift/sticker_27.gif" alt="💖">
+            </div>
+
+            <!-- Badge -->
+
+            <div class="badge">
+                Dibuat Khusus Untuk little girl ❤️
+            </div>
+
+            <!-- Judul -->
+
+            <h1>Hai Cantik...</h1>
+
+            <h2 id="typingText">
+                Ada sesuatu yang mau aku tanyain...
+            </h2>
+
+            <div class="divider">
+                <p>💖sayang jangan lupa di klik musiknyaa 
+                </p>
+            </div>
+
+            <p class="quote">
+                "Kalau dunia penuh pilihan,
+                aku tetap memilih kamu."
+            </p>
+
+            <!-- Question -->
+
+            <div class="question-box">
+
+                <h2 id="question">
+                    Mau nggak tetep sama akuu terusss jangan pergii? 🥺💖
+                </h2>
+
+                <p class="sub-text">
+                    Jawab yang jujur ya...
+                    Tapi kalau bisa pilih yang bikin aku senyum. 🤭💕
+                </p>
+
+            </div>
+
+            <!-- Button -->
+
+            <div class="button-area">
+                <button>
+
+                <button id="yesBtn" class="btn yes">
+                💖 Iya Sayang</button>
+
+                <button id="noBtn" class="btn no">
+                    😝Enggak</button>
+
+                </button>
+
+            </div>
+
+            <!-- Hint -->
+
+            <div class="hint">
+                🤫 Coba pencet tombol
+                <b>"Enggak"</b>
+                kalau bisa...
+            </div>
+
+            <!-- Love Meter -->
+
+            <div class="love-counter">
+
+                ❤️ Love Meter
+
+                <div class="progress">
+                    <div id="loveFill" class="fill"></div>
+                </div>
+
+                <span id="lovePercent">0%</span>
+
+            </div>
+
+            <!-- Result -->
+
+            <div id="resultCard" class="result-card">
+
+                <img src="gift/pentol-gif-1.jpg" alt="Happy Bear">
+
+                <h2>YEAYYY!! 🥳💖</h2>
+
+                <p id="loveMessage">
+                    Aku tahu kamu bakal pilih "Iya". ❤️
+                </p>
+
+                <button id="nextBtn" class="next-btn">
+                    💌 Buka Surat Cintaaa
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= LETTER ================= -->
+
+    <div id="letterModal" class="letter-modal">
+
+        <div class="letter-box">
+
+            <span id="closeLetter" class="close-btn">
+                &times;
+            </span>
+
+            <h2>💌 Surat Untuk Kamu 💌</h2>
+
+            <p>Hai cantik...</p>
+
+            <p>
+                Makasih ya karena sudah hadir di hidupku.
+                Walaupun aku belum sempurna,
+                aku selalu berusaha menjadi yang terbaik untukmu.
+            </p>
+
+            <p>
+                Semoga kita selalu saling menjaga,
+                saling mengerti,
+                dan terus membuat kenangan indah bersama.
+            </p>
+
+            <p>
+                Kalau nanti kita sedang marah,
+                jangan lama-lama ya...
+                Karena aku lebih suka melihat senyum kamu.
+            </p>
+
+            <h3>
+                I Love You More Than Yesterday,
+                Less Than Tomorrow ❤️
+            </h3>
+
+        </div>
+
+    </div>
+
+    <!-- ================= EFFECT ================= -->
+
+    <canvas id="confettiCanvas"></canvas>
+    <canvas id="fireworkCanvas"></canvas>
+
+    <div id="emojiContainer"></div>
+    <div id="loveRain"></div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        Dibuat khusus untuk seseorang yang paling spesial❤️.
+    </footer>
+
+    <!-- ================= JS ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
